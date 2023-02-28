@@ -1,5 +1,7 @@
 import React from "react";
 import { useEffect, useState } from "react";
+import Email from "../../components/common/Inputs/email";
+import Password from "../../components/common/Inputs/password";
 
 export default function Login() {
   const [bgImage, setBgImage] = useState("");
@@ -16,7 +18,7 @@ export default function Login() {
 
   return (
     <section
-      className="bg-no-repeat bg-center bg-cover"
+      className="bg-[#1d1e1f] bg-no-repeat bg-center bg-cover"
       style={{ backgroundImage: bgImage }}
     >
       <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
@@ -26,37 +28,8 @@ export default function Login() {
               Login Here
             </h1>
             <form className="space-y-4 md:space-y-6" action="#">
-              <div>
-                <label
-                  for="email"
-                  className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                >
-                  Email:
-                </label>
-                <input
-                  type="email"
-                  name="email"
-                  id="email"
-                  className="bg-gray-50 border-2 border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                  placeholder="email@email.com"
-                  required=""
-                ></input>
-              </div>
-              <div>
-                <label
-                  for="password"
-                  className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                >
-                  Password:
-                </label>
-                <input
-                  type="password"
-                  name="password"
-                  id="password"
-                  className="bg-gray-50 border-2 border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5  dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                  required=""
-                ></input>
-              </div>
+              <Email />
+              <Password />
               <div className="flex items-center justify-between">
                 <div className="flex items-start">
                   <div className="flex items-center h-5">
@@ -84,7 +57,7 @@ export default function Login() {
               <p className="text-sm font-light dark:text-white">
                 Don't have an account yet?{" "}
                 <a
-                  href="#"
+                  href="/register"
                   className="font-medium text-primary-600 hover:underline dark:text-primary-500"
                 >
                   Sign up

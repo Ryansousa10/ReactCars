@@ -6,7 +6,11 @@ import Login from "./pages/Login";
 
 function App() {
   const [count, setCount] = useState(0);
-  return <Body><Login/></Body>;
+  return (
+    <Body>
+      <Login />
+    </Body>
+  );
 }
 
 export default App;
