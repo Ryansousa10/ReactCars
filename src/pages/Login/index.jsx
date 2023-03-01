@@ -1,35 +1,36 @@
 import React from "react";
 import { useEffect, useState } from "react";
-import Email from "../../components/common/Inputs/email";
-import Password from "../../components/common/Inputs/password";
+import InputComponent from "../../components/common/Inputs/InputComponent";
 
 export default function Login() {
   const [bgImage, setBgImage] = useState("");
 
-  useEffect(() => {
-    async function fetchRandomImage() {
-      const response = await fetch(
-        "https://source.unsplash.com/random/1600x900/?cars"
-      );
-      setBgImage(`url(${response.url})`);
-    }
-    fetchRandomImage();
-  }, []);
-
   return (
     <section
-      className="bg-[#1d1e1f] bg-no-repeat bg-center bg-cover"
-      style={{ backgroundImage: bgImage }}
+      className="h-full w-full items-center justify-center bg-no-repeat bg-center flex"
+      style={{ backgroundImage: "url('/src/assets/nfsbg.jpg')" }}
     >
-      <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
-        <div className="w-full rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 bg-gradient-to-tr from-[#C1D602]/20 via-[#1B7A24]/20 to-[#1B4D82]/20 mix border-gray-500">
+      <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen md:w-3/4 lg:py-0">
+        <div className="w-full rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 bg-[#171717]/60 border-gray-100 backdrop-blur-md">
           <div className="p-6 space-y-4 md:space-y-6 sm:p-8 ">
             <h1 className="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white flex justify-center">
               Login Here
             </h1>
             <form className="space-y-4 md:space-y-6" action="#">
-              <Email />
-              <Password />
+              <InputComponent
+                type="email"
+                label="Email"
+                id={3}
+                required={true}
+                placeholder={"Email Address"}
+              />
+              <InputComponent
+                type="password"
+                label="Password"
+                id={4}
+                required={true}
+                placeholder={"Password"}
+              />
               <div className="flex items-center justify-between">
                 <div className="flex items-start">
                   <div className="flex items-center h-5">
