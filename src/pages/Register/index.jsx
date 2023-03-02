@@ -46,7 +46,7 @@ export default function Register() {
                 placeholder={"Password"}
               />
               <InputComponent
-                type="confirmPassword"
+                type="password"
                 label="Confirm Password"
                 id={5}
                 required={true}
